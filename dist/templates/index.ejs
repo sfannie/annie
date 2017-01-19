@@ -1,0 +1,12 @@
+<@- include('include/_header.ejs', 
+  {
+    data:{
+      title:"annie",
+      css:["css/app.css"]
+    }
+  });
+@>
+<body data-controller="indexController">
+  <h1>Hello world!</h1>
+</body>
+<@- include('include/_footer.ejs', { data: {main: 'modules/index/index'}}); @>

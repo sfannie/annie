@@ -1,0 +1,18 @@
+<@- include('../include/_header.ejs', 
+  {
+    data:{
+      title:"hair",
+      css:["css/canvas.css"]
+    }
+  });
+@>
+<body data-controller="baseController">
+
+  <h1>一、基本元素</h1>
+  
+  <div class="box">
+      <canvas id="baseCanvas"></canvas>
+  </div>
+
+</body>
+<@- include('../include/_footer.ejs', { data: {main: 'modules/canvas/base'}}); @>
