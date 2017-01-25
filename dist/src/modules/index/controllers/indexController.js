@@ -11,5 +11,7 @@ define([
         }
     };
     
-    Page.init();
+    app.controller("indexController",function(){
+      Page.init();
+    });
 });

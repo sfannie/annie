@@ -67,7 +67,7 @@ var Config = {
     dest: "../dist",
     patch:"../patch",
     output: "../output",
-    templates: "../www/templates"
+    templates: "../templates"
 };
 
 _.extend(Config, {
@@ -176,7 +176,8 @@ gulp.task("ejs", function() {
             data: {},
             delimiter: "@"
         }, {
-            root: __dirname + "/templates"
+            root: __dirname + "/templates",
+            ext: 'html'
         }))
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest(Config.ejs_dest));

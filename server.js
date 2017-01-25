@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //设置静态路径
 app.use('/www', express.static('www'));
-app.use('/invest/images', express.static('www/images'));
-app.use('/invest/modules', express.static('www/modules'));
+app.use('/annie/images', express.static('www/images'));
+app.use('/annie/modules', express.static('www/modules'));
 
 //路径
 var CONTEXT_PATH = "/www",
@@ -31,7 +31,7 @@ var CONTEXT_PATH = "/www",
 pkg.build = BUILD_TIMESTAMP;
 
 //设置模板路径
-app.set('views',  path.join(__dirname, 'www/templates')); // general config
+app.set('views',  path.join(__dirname, 'templates')); // general config
 
 //设置自定义模板
 app.engine('ejs', function() {
