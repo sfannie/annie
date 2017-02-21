@@ -7,7 +7,7 @@ function sleep(milliSeconds) {
 }
 
 
-router.post('/invest/chaogu/turntable/v1/activity/lottery', function(req, res) {
+router.post('/annie/huodong/lottery', function(req, res) {
 
     sleep(500);
 

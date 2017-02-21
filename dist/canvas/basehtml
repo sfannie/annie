@@ -1,10 +1,10 @@
-<!DOCTYPE html><html land="zh"><head><meta charset="utf-8"><meta http-equiv="Cache-Control" content="no-cache"><meta name="screen-orientation" content="portrait"><meta name="x5-orientation" content="portrait"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"><meta name="applicable-device" content="mobile"><title>annie</title><link rel="stylesheet" id="app-css-link" href="/annie/css/canvas.css?v=20170123140750" type="text/css"><script type="text/javascript" src="/annie/js/flexible.js?v=20170123140750"></script><script type="text/javascript">var _app = {
-      env : "DEV",
+<!DOCTYPE html><html land="zh"><head><meta charset="utf-8"><meta http-equiv="Cache-Control" content="no-cache"><meta name="screen-orientation" content="portrait"><meta name="x5-orientation" content="portrait"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"><meta name="applicable-device" content="mobile"><title>annie</title><link rel="stylesheet" id="app-css-link" href="/annie/css/canvas.css?v=20170221210538" type="text/css"><script type="text/javascript" src="/annie/js/flexible.js?v=20170221210538"></script><script type="text/javascript">var _app = {
+      env : "UAT",
       ctx : "/annie",
       version:"0.0.1",
-      ts:"20170123140750",
+      ts:"20170221210538",
       name:"app"
-    };</script></head><body data-controller="baseController"><canvas id="baseCanvas"></canvas></body><script type="text/javascript" src="/annie/libs/require.js?v=20170123140750"></script><script type="text/javascript" src="/annie/libs/require-config.js?v=20170123140750"></script><script type="text/javascript">requirejs.config({baseUrl:"/annie"});
+    };</script></head><body data-controller="baseController"><canvas id="baseCanvas"></canvas></body><script type="text/javascript" src="/annie/libs/require.js?v=20170221210538"></script><script type="text/javascript" src="/annie/libs/require-config.js?v=20170221210538"></script><script type="text/javascript">requirejs.config({baseUrl:"/annie"});
             
                  
                     require(["modules/canvas/base"]);</script></html>

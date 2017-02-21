@@ -14,37 +14,6 @@ define([
             this.drawClock();
             setInterval(this.drawClock, 1000); 
         },
-        drawImage: function(){
-            var ctx = document.getElementById('baseCanvasImage').getContext('2d');
-            var img = new Image();
-            img.onload = function(){
-                for (var i=0;i<4;i++){
-                  for (var j=0;j<3;j++){
-                    ctx.drawImage(img,j*50,i*38,50,38);
-                  }
-                }
-              };
-            img.src = 'https://mdn.mozillademos.org/files/5397/rhino.jpg';
-
-        },
-        drawRangle: function(){
-            var ctx = document.getElementById('rangle').getContext('2d');
-              ctx.translate(75,75);
-
-              for (var i=1;i<6;i++){ 
-                ctx.save();
-                ctx.fillStyle = 'rgb('+(51*i)+','+(255-51*i)+',255)';
-
-                for (var j=0;j<i*6;j++){
-                  ctx.rotate(Math.PI*2/(i*6));
-                  ctx.beginPath();
-                  ctx.arc(0,i*12.5,5,0,Math.PI*2,true);
-                  ctx.fill();
-                }
-
-                ctx.restore();
-              }
-        },
         drawClock: function(){
             var self = this; 
             var canvas = document.getElementById('baseCanvas');
@@ -224,7 +193,7 @@ define([
             ctx.lineWidth = 14;
             ctx.beginPath();
             ctx.moveTo(-20,0);
-            ctx.lineTo(80,0);
+            ctx.lineTo(60,0);
             ctx.stroke();
             ctx.restore();
 
