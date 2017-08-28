@@ -1,4 +1,6 @@
 define([
+  "app",
   "modules/index/controllers/indexController"
-],function(){
+],function(app){
+    app.bootstrap();
 });

@@ -1,0 +1,12 @@
+<@- include('../include/_header.ejs', 
+  {
+    data:{
+      title:"hair",
+      css:["css/canvas.css"]
+    }
+  });
+@>
+<body data-controller="fontsController">
+  <canvas id="canvas"></canvas>
+</body>
+<@- include('../include/_footer.ejs', { data: {main: 'modules/canvas/fonts'}}); @>

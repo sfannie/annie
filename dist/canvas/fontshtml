@@ -4,7 +4,7 @@
       version:"0.0.1",
       ts:"20170707100636",
       name:"app"
-    };</script></head><body data-controller="baseController"><canvas id="baseCanvas"></canvas></body><script type="text/javascript" src="/annie/libs/require.js?v=20170707100636"></script><script type="text/javascript" src="/annie/libs/require-config.js?v=20170707100636"></script><script type="text/javascript">requirejs.config({baseUrl:"/annie"});
+    };</script></head><body data-controller="fontsController"><canvas id="canvas"></canvas></body><script type="text/javascript" src="/annie/libs/require.js?v=20170707100636"></script><script type="text/javascript" src="/annie/libs/require-config.js?v=20170707100636"></script><script type="text/javascript">requirejs.config({baseUrl:"/annie"});
             
                  
-                    require(["modules/canvas/base"]);</script></html>
+                    require(["modules/canvas/fonts"]);</script></html>
