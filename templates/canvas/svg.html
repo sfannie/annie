@@ -1,0 +1,12 @@
+<@- include('../include/_header.ejs', 
+  {
+    data:{
+      title:"hair",
+      css:["css/canvas.css"]
+    }
+  });
+@>
+<body data-controller="baseController">
+  <canvas id="baseCanvas"></canvas>
+</body>
+<@- include('../include/_footer.ejs', { data: {main: 'modules/canvas/base'}}); @>
