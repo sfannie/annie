@@ -176,12 +176,11 @@ gulp.task("ejs", function() {
             data: {},
             delimiter: "@"
         }, {
-            root: __dirname + "/templates",
-            ext: 'html'
+            root: __dirname + "/templates"
         }))
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest(Config.ejs_dest));
-})
+});
 
 /*
  * 编译less

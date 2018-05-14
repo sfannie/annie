@@ -7,35 +7,27 @@ define([
 ], function(app, $, _, indexService) {
 
     var Page = {
-        timeOut: 0,
+        //time: 0,
+        timeOutEvent: 0,
         init:function(){
-            //self.slider.init();
-            document.getElementById('pageInit').addEventListener('touchstart',function(e) {  
-                //
-                this.timeOut = setTimeout(function(){
-                    $('body').css('background','#'+Math.floor(Math.random()*256).toString(10));
-                    e.preventDefault();
-                },500);
-            });
-
-            document.getElementById('pageInit').addEventListener('touchmove',function(e){
-                clearTimeout(this.timeOut);
-                this.timeOut = 0;
-            });
-
-            document.getElementById('pageInit').addEventListener('touchend',function(e){
-                clearTimeout(this.timeOut);
-                if(this.timeOut != 0){
-                    $('body').css('background','#fff');
-                }
-                return false;
-            });
+            this.slider.init('pageInit');
         },
+
+        longPress: function(){
+            this.timeOutEvent = 0; 
+            //alert("长按事件触发发"); 
+            $("#pageInit").off('touchmove');
+            $('body').scrollTop(500).css('background-color','red');
+        },
+
+
         slider: {
-            slider: document.getElementById('pageInit'),
+            time: 0,
+            slider: null,
             touch: ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
-            init: function() {
+            init: function(id, callback) {
                 var self = this;
+                self.slider = document.getElementById(id);
                 if (!!self.touch) {
                     self.slider.addEventListener('touchstart', self.events, false);
                 }
@@ -56,6 +48,8 @@ define([
                     }
                 },
                 start: function(event) {
+                    event.preventDefault();
+                    var self = this;
                     var touch = event.targetTouches[0];
                     this.startPos = {
                         x: touch.pageX,
@@ -65,8 +59,10 @@ define([
                     this.isScrolling = 0; //这个参数判断是垂直滚动还是水平滚动
                     this.slider.addEventListener('touchmove', this, false);
                     this.slider.addEventListener('touchend', this, false);
+                    this.time = setTimeout(self.done,300);
                 },
                 move: function(event) {
+                    var self = this;
                     if (event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
                     var touch = event.targetTouches[0];
                     this.endPos = {
@@ -80,23 +76,30 @@ define([
                     if (this.isScrolling === 1) {
                         event.preventDefault();
                     }
+                    clearTimeout(self.time);
+                    self.time = 0;
                 },
                 end: function(event) {
+                    var self = this;
                     var duration = +new Date - this.startPos.time; //滑动的持续时间
-                    if (this.isScrolling === 1) { //当为水平滚动时
+                    if (this.isScrolling === 1) { //当为垂直滚动时
 
                         if (Number(duration) > 10) {
                             //判断向上划还是向下划
                             if (this.endPos.y > 10) {
                                 console.log('向下划');
+                                $('body').scrollTop(0);
                             } else if (this.endPos.y < -10) {
                                 console.log('向上划');
-                                
-                                $('body').scrollTop(0);
-                                    
+                                event.preventDefault();
                             }
                         }
 
+                    }
+
+                    clearTimeout(self.time);
+                    if(self.time !==0){
+                        console.log('click event');
                     }
                     
                     //解绑事件
@@ -104,6 +107,11 @@ define([
                     this.slider.removeEventListener('touchend', this, false);
 
 
+                },
+                done: function(){
+                    this.time = 0;
+                    $("body").css('background-color','#ff0000');
+                    $('body').scrollTop(500);
                 }
 
             }
@@ -112,6 +120,6 @@ define([
     };
     
     app.controller("indexController",function(){
-      Page.init();
+       Page.init();
     });
 });
