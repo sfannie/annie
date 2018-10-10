@@ -51,6 +51,7 @@
 			app: 'modules/app',
 			// underscore
 			underscore: 'libs/underscore-min',
+			d3: 'libs/d3.v5.min'
 			// plugins
 		},
 		map: map,
