@@ -66,8 +66,7 @@ app.use('/annie/*.html', function(req, res) {
 
 //活动
 app.use('/huodong', function(req, res) {
-  // var robotUrl = 'https://stock.stg.pingan.com/smart';
-  var robotUrl = 'http://10.25.175.118:30080/niushoworderapp/smart';
+  var robotUrl = '';
   var url = robotUrl + req.url;
   console.log('-----------req.url: ' + req.url);
   console.log('-----------url: ' + url);

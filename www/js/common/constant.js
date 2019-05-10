@@ -7,7 +7,7 @@ define(function() {
 
   var ENV = _app.env || 'PRD';
 
-  if (location.href.indexOf('stock.stg.pingan.com') !== -1) {
+  if (location.href.indexOf('www.com') !== -1) {
     ENV = 'UAT';
   }
 
